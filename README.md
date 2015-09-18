@@ -12,14 +12,19 @@ about which network ports are exposed for this demo application. The Dockerfile 
 
 ### Installation Process
 
-(1) Build the docker image using the `Dockerfile`.
+1. Build the docker image using the `Dockerfile`.
 
-(2) Use docker-compose and its confoguration file docker-compose.yml in order to spin up three docker containers each running MarkLogic
+2. Use docker-compose and its confoguration file docker-compose.yml in order to spin up three docker containers each running MarkLogic
 
-(3) Use MarkLogic Management API (or MarkScript) to setup the cluster by installing a standalone marklogic server in the one container and adding the two MarkLogic servers to the cluster.
+3. Use MarkLogic Management API (or MarkScript) to setup the cluster by installing a standalone marklogic server in the one container and adding the two MarkLogic servers to the cluster.
  
-(4) Bootstrap an application and configure high availability with forest-failover  
+4. Bootstrap an application and configure high availability with forest-failover  
 
-The folder `roxyApp` contains a roxy project. It is used to bootstrap a base application (including a content and modules database) in MarkLogic.
+The folder `roxyApp` contains a roxy project. It is used to bootstrap a base application (including a content and modules database) in MarkLogic:
+ * Please edit the property file under `roxyApp/deply/local.properties` and set the IP of your docker host (docker machine) that is hosting the containers.
+ * Run the following commads:
+ ** `./ml local bootstrap`
+ ** `./ml local bootstrap --replicate-internals`
+
 
 ### more to come - this is still under construction.
