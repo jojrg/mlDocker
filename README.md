@@ -21,7 +21,7 @@ about which network ports are exposed for this demo application. The Dockerfile 
 4. Bootstrap an application and configure high availability with forest-failover  
 
 The folder `roxyApp` contains a roxy project. It is used to bootstrap a base application (including a content and modules database) in MarkLogic:
- * Please edit the property file under `roxyApp/deply/local.properties` and set the IP of your docker host (docker machine) that is hosting the containers.
+ * Edit the property file under `roxyApp/deply/local.properties` and set the `bootstrap-server` property to the IP of your docker host (docker machine) that is hosting the containers.
  * Run the following commads:
  ** `./ml local bootstrap`
  ** `./ml local bootstrap --replicate-internals`
